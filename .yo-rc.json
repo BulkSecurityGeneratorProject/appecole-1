@@ -1,0 +1,38 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "ma.xavion.appecole",
+            "nativeLanguage": "fr"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "AppEcole",
+        "packageName": "ma.xavion.appecole",
+        "packageFolder": "ma/xavion/appecole",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": "spring-websocket",
+        "databaseType": "sql",
+        "devDatabaseType": "h2Memory",
+        "prodDatabaseType": "mysql",
+        "searchEngine": "elasticsearch",
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": true,
+        "jwtSecretKey": "YmViNjMwNGY1ZGFhNmRjYjlmZjc3MTVhY2FhOWI1MzYxNDMzODYwZGVlN2U4YjY1OTkxZWU1Y2RkYjEzZmQ0YjlmZWIzY2ZlNzk3NDhmZWUyYjlmMDBiODgyZDk0ZDFkNmUxZWZhNDY2ZWU2ODcyZjU5OTU5ODAzYTY4NWEwODY=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": ["gatling"],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "fr",
+        "languages": ["fr", "ar-ly"]
+    }
+}
