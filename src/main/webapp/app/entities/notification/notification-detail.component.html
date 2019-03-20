@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="notification">
+            <h2><span jhiTranslate="appEcoleApp.notification.detail.title">Notification</span> {{notification.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appEcoleApp.notification.titre">Titre</span></dt>
+                <dd>
+                    <span>{{notification.titre}}</span>
+                </dd>
+                <dt><span jhiTranslate="appEcoleApp.notification.description">Description</span></dt>
+                <dd>
+                    <span>{{notification.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="appEcoleApp.notification.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'appEcoleApp.TypeNotification.' + notification.type}}">{{notification.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="appEcoleApp.notification.user">User</span></dt>
+                <dd>
+                    {{notification.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/notification', notification.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

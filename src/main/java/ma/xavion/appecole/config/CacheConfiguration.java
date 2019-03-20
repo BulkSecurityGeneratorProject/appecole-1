@@ -41,6 +41,14 @@ public class CacheConfiguration {
             cm.createCache(ma.xavion.appecole.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(ma.xavion.appecole.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(ma.xavion.appecole.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(ma.xavion.appecole.domain.Ecole.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.xavion.appecole.domain.Notification.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.xavion.appecole.domain.Niveau.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.xavion.appecole.domain.Niveau.class.getName() + ".ids", jcacheConfiguration);
+            cm.createCache(ma.xavion.appecole.domain.Matiere.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.xavion.appecole.domain.Matiere.class.getName() + ".niveaus", jcacheConfiguration);
+            cm.createCache(ma.xavion.appecole.domain.Matiere.class.getName() + ".ids", jcacheConfiguration);
+            cm.createCache(ma.xavion.appecole.domain.Note.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

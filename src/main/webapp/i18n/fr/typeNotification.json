@@ -1,0 +1,10 @@
+{
+    "appEcoleApp": {
+        "TypeNotification": {
+            "null": "",
+            "ALERTE": "ALERTE",
+            "EVENEMENT": "EVENEMENT",
+            "INFO": "INFO"
+        }
+    }
+}

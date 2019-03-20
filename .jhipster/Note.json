@@ -1,0 +1,38 @@
+{
+    "name": "Note",
+    "fields": [
+        {
+            "fieldName": "valeur",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "dateControle",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "matiere",
+            "otherEntityRelationshipName": "id",
+            "relationshipName": "matiere",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "login",
+            "relationshipName": "user",
+            "otherEntityField": "login"
+        }
+    ],
+    "changelogDate": "20190319230124",
+    "entityTableName": "note",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

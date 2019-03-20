@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-note-heading" jhiTranslate="appEcoleApp.note.home.createOrEditLabel">Create or edit a Note</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!note.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="note.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appEcoleApp.note.valeur" for="field_valeur">Valeur</label>
+                    <input type="number" class="form-control" name="valeur" id="field_valeur"
+                        [(ngModel)]="note.valeur" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appEcoleApp.note.dateControle" for="field_dateControle">Date Controle</label>
+                    <div class="input-group">
+                        <input id="field_dateControle" type="text" class="form-control" name="dateControle" ngbDatepicker  #dateControleDp="ngbDatepicker" [(ngModel)]="note.dateControle"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateControleDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appEcoleApp.note.matiere" for="field_matiere">Matiere</label>
+                    <select class="form-control" id="field_matiere" name="matiere" [(ngModel)]="note.matiere" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="matiereOption.id === note.matiere?.id ? note.matiere : matiereOption" *ngFor="let matiereOption of matieres; trackBy: trackMatiereById">{{matiereOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appEcoleApp.note.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="note.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === note.user?.id ? note.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

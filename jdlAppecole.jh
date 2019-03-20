@@ -1,0 +1,72 @@
+entity User {
+	
+}
+
+entity Ecole {
+	id Long,
+	nom String required,
+    adresse String,
+    ville String,
+    telephone String    
+}
+
+entity Notification {
+	id Long,
+	titre String,
+	description String,
+	type TypeNotification,
+	
+}
+
+entity Niveau {
+	id Long,
+	titre String,
+    description String
+}
+
+entity Matiere {
+	id Long,
+	titre String,
+	description String
+}
+
+entity Note {
+	id Long,
+	valeur Float,
+	dateControle LocalDate,
+	
+}
+
+enum TypeNotification {
+    ALERTE, EVENEMENT, INFO
+}
+enum TypeNotes {
+    CONTROL, EXAM, ORAL
+}
+
+
+relationship ManyToMany {
+	Matiere{niveau(id)} to Niveau{id},
+ }
+
+relationship ManyToOne {
+	Note{matiere(id)} to Matiere{id},
+    Note{user(login)} to User{login},
+    Notification{user(login)} to User{login},
+    Ecole{user(login)} to User{login}
+    
+}
+// Set pagination options
+
+paginate User, Note, Notification with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except TypeNotes, TypeNotification
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+
+

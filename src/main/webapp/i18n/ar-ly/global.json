@@ -7,6 +7,11 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "الكيانات",
+                "ecole": "Ecole",
+                "notification": "Notification",
+                "niveau": "Niveau",
+                "matiere": "Matiere",
+                "note": "Note",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
